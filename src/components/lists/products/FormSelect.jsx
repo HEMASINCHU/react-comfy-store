@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./formselect.css";
+import Products from "./products/Products";
 const FormSelect = () => {
   const [categories] = useState([
     "all",
@@ -47,91 +48,94 @@ const FormSelect = () => {
     });
   }
   return (
-    <div className="filterform">
-      <form onSubmit={handleSubmit}>
-        <section className="choice">
-          <div>
-            <label>Search Product</label> <br />
-            <input
-              id="search"
-              type="text"
-              name="searchproduct"
-              onChange={handleChange}
-              value={form.searchproduct}
-            />
-          </div>
-          <div>
-            <label>Select Category</label> <br />
-            <select
-              id="category"
-              onChange={handleChange}
-              name="categories"
-              value={form.categories}
-            >
-              {categories.map((category) => (
-                <option key={category}>{category}</option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label>Select Company</label> <br />
-            <select
-              id="company"
-              onChange={handleChange}
-              name="company"
-              value={form.company}
-            >
-              {company.map((category) => (
-                <option key={category}>{category}</option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label>Sort By</label> <br />
-            <select
-              id="sort"
-              onChange={handleChange}
-              name="sortby"
-              value={form.sortby}
-            >
-              {sort.map((category) => (
-                <option key={category}>{category}</option>
-              ))}
-            </select>
-          </div>
-        </section>
-        <section className="buttons">
-          <div className="range">
-            <label>Select Pricing</label>
-            <br />
-            <input
-              type="range"
-              name="range"
-              onChange={handleChange}
-              value={form.range}
-            />
-          </div>
-          <div>
-            <label>Free Shipping</label> <br />
-            <input
-              id="check"
-              type="checkbox"
-              name="freeshipping"
-              onChange={handleChange}
-              value={form.freeshipping}
-            />
-          </div>
-          <div>
-            <button className="btnsearch">SEARCH</button>
-          </div>
-          <div>
-            <button type="reset" className="btnreset">
-              RESET
-            </button>
-          </div>
-        </section>
-      </form>
-    </div>
+    <>
+      <div className="filterform">
+        <form onSubmit={handleSubmit}>
+          <section className="choice">
+            <div>
+              <label>Search Product</label> <br />
+              <input
+                id="search"
+                type="text"
+                name="searchproduct"
+                onChange={handleChange}
+                value={form.searchproduct}
+              />
+            </div>
+            <div>
+              <label>Select Category</label> <br />
+              <select
+                id="category"
+                onChange={handleChange}
+                name="categories"
+                value={form.categories}
+              >
+                {categories.map((category) => (
+                  <option key={category}>{category}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Select Company</label> <br />
+              <select
+                id="company"
+                onChange={handleChange}
+                name="company"
+                value={form.company}
+              >
+                {company.map((category) => (
+                  <option key={category}>{category}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Sort By</label> <br />
+              <select
+                id="sort"
+                onChange={handleChange}
+                name="sortby"
+                value={form.sortby}
+              >
+                {sort.map((category) => (
+                  <option key={category}>{category}</option>
+                ))}
+              </select>
+            </div>
+          </section>
+          <section className="buttons">
+            <div className="range">
+              <label>Select Pricing</label>
+              <br />
+              <input
+                type="range"
+                name="range"
+                onChange={handleChange}
+                value={form.range}
+              />
+            </div>
+            <div>
+              <label>Free Shipping</label> <br />
+              <input
+                id="check"
+                type="checkbox"
+                name="freeshipping"
+                onChange={handleChange}
+                value={form.freeshipping}
+              />
+            </div>
+            <div>
+              <button className="btnsearch">SEARCH</button>
+            </div>
+            <div>
+              <button type="reset" className="btnreset">
+                RESET
+              </button>
+            </div>
+          </section>
+        </form>
+      </div>
+      <Products />
+    </>
   );
 };
 
