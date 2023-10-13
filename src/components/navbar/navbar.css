@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(229, 231, 235);
+  padding: 5px 20px;
+}
+.navbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.navbar-link li {
+  list-style: none;
+}
+
+.navbar-container a {
+  text-decoration: none;
+}
+.navbar-rightside {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}

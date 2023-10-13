@@ -1,9 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div>
-      <h1>Comfy Store Project</h1>
+      <Routes>
+        <Route path="/" element={<Header />} />
+      </Routes>
     </div>
   );
 }
