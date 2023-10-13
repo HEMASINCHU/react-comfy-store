@@ -14,4 +14,9 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
+  text-align: center;
+}
+.products a {
+  text-decoration: none;
+  text-transform: capitalize;
 }

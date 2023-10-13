@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./products.css";
 
 const Products = () => {
@@ -21,7 +21,7 @@ const Products = () => {
         {data?.length > 0 &&
           data.map((product) => (
             <div key={product.id}>
-              <Link to={"/product/" + product.id}>
+              <NavLink to={"/product/" + product.id}>
                 <img
                   style={{
                     width: "15rem",
@@ -31,9 +31,9 @@ const Products = () => {
                   src={product["attributes"]["image"]}
                   alt="lamp"
                 />
-                <p>{product["attributes"]["title"]}</p>
+                <h1>{product["attributes"]["title"]}</h1>
                 <span>{product["attributes"]["price"]}</span>
-              </Link>
+              </NavLink>
             </div>
           ))}
       </div>
