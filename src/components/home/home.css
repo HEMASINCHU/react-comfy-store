@@ -1,16 +1,17 @@
-.main-comp {
+.home-comp {
   margin: 10px 20px;
   display: flex;
   gap: 30px;
+  align-items: center;
 }
-.main-comp a {
+.home-comp a {
   text-decoration: none;
   color: white;
   letter-spacing: 1px;
 }
-.main-section {
+.home-section {
   flex: 1;
 }
-.main-pic {
+.home-pic {
   flex: 1;
 }
