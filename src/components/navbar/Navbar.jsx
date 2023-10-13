@@ -29,12 +29,12 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/cart" aria-disabled="true">
+                <NavLink to="/checkout" aria-disabled="true">
                   Checkout
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/cart" aria-disabled="true">
+                <NavLink to="/orders" aria-disabled="true">
                   Orders
                 </NavLink>
               </li>

@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <div className="header-container">
         <NavLink to="/login">SignIn / Guest</NavLink>
-        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/signup">Register</NavLink>
       </div>
       <Navbar />
       <Outlet />
