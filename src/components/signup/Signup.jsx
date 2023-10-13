@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import "./signup.css";
 const SignUp = () => {
   const [login, setLogin] = useState({ username: "", password: "", email: "" });
@@ -11,6 +12,15 @@ const SignUp = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
+    axios
+      .post(
+        "https://strapi-store-server.onrender.com/api/auth/local/register",
+        {
+          ...login,
+        }
+      )
+      .then((res) => console.log(res));
+
     console.log(login);
     setLogin({ username: "", password: "", email: "" });
   }
@@ -49,7 +59,7 @@ const SignUp = () => {
         </button>
 
         <span className="span">
-          Not a member yet? <NavLink to="/signup">Login</NavLink>
+          Not a member yet? <NavLink to="/login">Login</NavLink>
         </span>
       </form>
     </div>

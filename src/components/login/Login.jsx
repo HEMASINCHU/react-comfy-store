@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [login, setLogin] = useState({ password: "", email: "" });
 
   function handleClickGuest() {
@@ -11,7 +12,9 @@ const LoginForm = () => {
         identifier: "test@test.com",
         password: "secret",
       })
-      .then((res) => console.log(res.login));
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(res.data));
+      });
   }
   const handleChange = (ev) => {
     const { name, value } = ev && ev.target;
@@ -20,8 +23,17 @@ const LoginForm = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
+    axios
+      .post("https://strapi-store-server.onrender.com/api/auth/local", {
+        identifier: login.email,
+        password: login.password,
+      })
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(res.data));
+      });
     console.log(login);
     setLogin({ password: "", email: "" });
+    navigate("/");
   }
 
   return (
