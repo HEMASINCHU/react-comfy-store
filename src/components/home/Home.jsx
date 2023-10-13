@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
+import FeatureProduct from "./FeatureProduct";
 import "./home.css";
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
           alt="avatar"
         />
       </div>
-      <h1 className="featured-product">Featured Products</h1>
+      <FeatureProduct />
     </React.Fragment>
   );
 };

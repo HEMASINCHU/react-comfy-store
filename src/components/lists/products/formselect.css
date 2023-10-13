@@ -1,0 +1,55 @@
+.filterform {
+  background-color: #f0f6ff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.choice,
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 1rem;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+#company,
+#category,
+#sort,
+#search {
+  width: 12rem;
+  height: 1.9rem;
+  border-radius: 6px;
+  margin: 10px;
+  border: 1px solid;
+}
+
+#check {
+  width: 5rem;
+}
+
+.btnsearch,
+.btnreset {
+  width: 13rem;
+  color: white;
+  border-radius: 5px;
+  height: 1.8rem;
+}
+
+.btnreset {
+  background-color: #c149ad;
+  border: none;
+}
+
+.btnreset:hover {
+  background-color: #ab3b98;
+}
+.btnsearch {
+  background-color: rgb(0, 115, 255);
+  border: none;
+}
+#check {
+  width: 2rem;
+  height: 1.5rem;
+}
