@@ -1,0 +1,29 @@
+.about-comp {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .about-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-btn {
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 20px;
+    background-color: blue;
+    border: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 4px;
+  }
+  .about-span {
+    font-size: 5rem;
+  }
+  .about-para {
+    font-size: 18px;
+    line-height: 2;
+    font-size: 1rem;
+  }
+  
