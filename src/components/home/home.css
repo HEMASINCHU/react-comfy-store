@@ -1,0 +1,16 @@
+.main-comp {
+  margin: 10px 20px;
+  display: flex;
+  gap: 30px;
+}
+.main-comp a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
+}
+.main-section {
+  flex: 1;
+}
+.main-pic {
+  flex: 1;
+}
