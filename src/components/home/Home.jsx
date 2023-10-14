@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
-import FeatureProduct from "./FeatureProduct";
+import FeatureProduct from "./featureproducts/FeatureProduct";
 import "./home.css";
 const Home = () => {
   return (
