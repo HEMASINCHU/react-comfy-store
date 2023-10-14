@@ -1,15 +1,14 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { CartContext } from "../Cart/CartContext";
-
+import { CartContext } from "../cart/CartContext";
+import "./productDetail.css";
 const productObj = {
-  options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  options: [1, 2, 3, 4, 5],
 };
 
-function ProductDetails() {
+const ProductDetail = () => {
   const [productDetails, setProductDetails] = useState();
   const [option] = useState(productObj.options);
-
   const { dispatch } = useContext(CartContext);
   const { id } = useParams();
 
@@ -19,28 +18,63 @@ function ProductDetails() {
       .then((res) => setProductDetails(res.data));
   }, [id]);
 
-  const {
-    attributes: { image, title, company, price },
-  } = productDetails;
+  const addToCart = () => {
+    if (productDetails) {
+      const { title, image, company, price, description } =
+        productDetails.attributes;
+      const productToAdd = {
+        title,
+        image,
+        company,
+        price,
+        description,
+        qty: 1,
+      };
+      dispatch({ type: "ADD_ITEM_CART", value: productToAdd });
+    }
+  };
 
   return (
     <>
       {productDetails && (
-        <div className="productDetails">
-          <img src={image} alt="lamp" />
-          <div className="productdetailsdetailscontent">
-            <h2>{title}</h2>
-            <h4>{company}</h4>
-            <span>{price}</span>
+        <section className="productDetail-container">
+          <img
+            src={productDetails.attributes.image}
+            alt="lamp"
+            className="productDetail-img"
+          />
+          <div className="product-container">
+            <h2 style={{ fontSize: "30px", textTransform: "capitalize" }}>
+              {productDetails.attributes.title}
+            </h2>
+            <h4 style={{ fontSize: "25px", color: "grey" }}>
+              {productDetails.attributes.company}
+            </h4>
+            <span style={{ fontSize: "20px" }}>
+              {productDetails.attributes.price}
+            </span>
             <p>{productDetails.attributes.description}</p>
             <div>
-              <label>colors</label>
+              <label>
+                <strong>colors</strong>
+              </label>
+              <br />
               {productDetails.attributes.colors.map((color) => (
-                <input type="color" key={color} value={color} />
+                <input
+                  className="color"
+                  type="color"
+                  key={color}
+                  value={color}
+                />
               ))}
             </div>
             <div>
-              <label>Amount</label> <br />
+              <label
+                style={{ textTransform: "capitalize", fontWeight: "700px" }}
+              >
+                Amount
+              </label>{" "}
+              <br />
               <select id="company">
                 {option.map((value) => (
                   <option value={value} key={value}>
@@ -50,22 +84,13 @@ function ProductDetails() {
               </select>
             </div>
             <div>
-              <button
-                onClick={() =>
-                  dispatch({
-                    type: "ADD_TO_CART",
-                    payload: { id, ...productDetails, qty: 0 },
-                  })
-                }
-              >
-                ADD TO BAG
-              </button>
+              <button onClick={addToCart}>ADD TO BAG</button>
             </div>
           </div>
-        </div>
+        </section>
       )}
     </>
   );
-}
+};
 
-export default ProductDetails;
+export default ProductDetail;

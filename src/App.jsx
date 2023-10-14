@@ -7,7 +7,7 @@ import Home from "./components/home/Home";
 import FormSelect from "./components/lists/products/FormSelect";
 import ProductDetails from "./components/lists/products/productdetail/ProductDetail";
 import Order from "./components/lists/order/Order";
-import Cart from "./components/lists/products/Cart/Cart";
+import Cart from "./components/lists/products/cart/Cart";
 import "./App.css";
 
 function App() {
