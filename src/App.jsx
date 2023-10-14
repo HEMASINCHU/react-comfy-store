@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import LoginForm from "./components/login/Login";
 import SignUp from "./components/signup/Signup";
@@ -14,18 +14,16 @@ function App() {
   return (
     <div>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<LoginForm />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="about" element={<About />} />
-          <Route path="products" element={<FormSelect />}></Route>
-          <Route path="product/:id" element={<ProductDetails />} />
-          <Route path="order" element={<Order />} />
-          <Route path="cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="login" element={<LoginForm />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="about" element={<About />} />
+        <Route path="products" element={<FormSelect />}></Route>
+        <Route path="product/:id" element={<ProductDetails />} />
+        <Route path="order" element={<Order />} />
+        <Route path="cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
