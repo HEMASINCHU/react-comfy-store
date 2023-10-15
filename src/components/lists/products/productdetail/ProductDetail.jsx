@@ -72,7 +72,7 @@ const ProductDetail = () => {
               <label
                 style={{ textTransform: "capitalize", fontWeight: "700px" }}
               >
-                Amount
+                <strong>Amount</strong>
               </label>{" "}
               <br />
               <select id="company">
