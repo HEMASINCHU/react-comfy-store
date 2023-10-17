@@ -22,8 +22,10 @@ const Header = () => {
         <div>
           {user && (
             <>
-              <h3>{user.user.username}</h3>
-              <button onClick={handleLogout}>Logout</button>
+              <h3 style={{ color: "grey" }}>
+                {user.user.username}
+                <button onClick={handleLogout}>Logout</button>
+              </h3>
             </>
           )}
         </div>
