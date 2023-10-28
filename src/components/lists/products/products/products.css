@@ -20,3 +20,26 @@
   text-decoration: none;
   text-transform: capitalize;
 }
+.pagination-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+}
+.btn {
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+.prev {
+  background-color: blue;
+}
+.next {
+  background-color: rgb(184, 179, 179);
+}
+.pagination-button button:disabled {
+  background-color: #cc0707;
+  cursor: not-allowed;
+}
