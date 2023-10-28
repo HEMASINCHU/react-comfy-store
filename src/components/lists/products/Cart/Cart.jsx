@@ -28,7 +28,7 @@ const Cart = () => {
 
   return (
     <div>
-      <h3>Shopping Cart</h3>
+      <h3>Shopping Carts</h3>
       <hr />
       {state.items.length <= 0 && <h4>Add items to cart !</h4>}
       {state.items.map((item) => (
