@@ -12,7 +12,7 @@ const Products = () => {
       .then((res) => setData(res.data));
   }, [page]);
 
- const handlePreviousClick = () => {
+  const handlePreviousClick = () => {
     if (page > 1) {
       setPage(page - 1);
     }
@@ -23,19 +23,14 @@ const Products = () => {
     }
   };
 
-
   const isPreviousDisabled = page === 1;
   const isNextDisabled = data.length === 0;
 
   return (
     <div style={{ margin: "4rem" }}>
       <div className="views">
-        <button onClick={handlePreviousClick} disabled={isPreviousDisabled}>
-          Grid
-        </button>
-        <button onClick={handleNextClick} disabled={isNextDisabled}>
-          Flex
-        </button>
+        <button onClick={handlePreviousClick}>Grid</button>
+        <button onClick={handleNextClick}>Flex</button>
       </div>
       <hr />
       <div className="products">
@@ -59,10 +54,18 @@ const Products = () => {
           ))}
       </div>
       <div className="pagination-button">
-        <button className=" btn prev" onClick={handlePreviousClick} disabled={isPreviousDisabled}>
+        <button
+          className=" btn prev"
+          onClick={handlePreviousClick}
+          disabled={isPreviousDisabled}
+        >
           Previous
         </button>
-        <button className="btn next" onClick={handleNextClick} disabled={isNextDisabled}>
+        <button
+          className="btn next"
+          onClick={handleNextClick}
+          disabled={isNextDisabled}
+        >
           Next
         </button>
       </div>
